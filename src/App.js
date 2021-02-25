@@ -76,24 +76,24 @@ function App() {
   function getToday(){
     var d = new Date();
     var day = d.getDay();
-    // switch(day){
-    //   case 0:
-    //       return "Sunday"
-    //   case 1:
-    //       return "Monday"
-    //   case 2:
-    //       return "Tuesday"
-    //   case 3:
-    //       return "Wednesday"
-    //   case 4:
-    //       return "Thursday"
-    //   case 5:
-    //       return "Friday"
-    //   case 6:
-    //       return "Saturday"
-    // }
+    switch(day){
+      case 0:
+          return "Sunday"
+      case 1:
+          return "Monday"
+      case 2:
+          return "Tuesday"
+      case 3:
+          return "Wednesday"
+      case 4:
+          return "Thursday"
+      case 5:
+          return "Friday"
+      case 6:
+          return "Saturday"
+    }
 
-    return "Monday"
+    
   }
 
   return (
