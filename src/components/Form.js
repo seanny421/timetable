@@ -22,7 +22,7 @@ function Form( {setInputText, inputText, setTodos, todos, today, setDay, day}){
     return(
         <form>
             <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input"/>
-            <button onClick={submitTodoHandler} className="todo-button" type="submit">
+            <button onClick={submitTodoHandler} type="submit">
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">

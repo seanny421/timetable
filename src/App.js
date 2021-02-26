@@ -3,6 +3,7 @@ import './App.css';
 import Form from './components/Form';
 import Menu from './components/Menu';
 import TodoList from "./components/TodoList";
+import DeadlineList from "./components/DeadlineList";
 
 function App() {
   //state
@@ -12,19 +13,21 @@ function App() {
   const [today, setToday] = useState("");
   const [day, setDay] = useState("");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [deadlines, setDeadlines] = useState([]);
 
   //run on app start
   useEffect(function(){
     setToday(getToday);
     setDay(getToday);
     getLocalTodos();
-    
+    getLocalDeadlines();
   }, []);
 
   useEffect(function(){
     filterHandler();
     saveLocalTodos();
-  }, [todos, day])
+    saveLocalDeadlines(); 
+  }, [todos, deadlines, day])
 
   function filterHandler(){
     switch(day){
@@ -57,6 +60,21 @@ function App() {
         break;
     }
   };
+
+  function saveLocalDeadlines(){
+    localStorage.setItem('deadlines', JSON.stringify(deadlines));
+  }
+
+  function getLocalDeadlines(){
+    if(localStorage.getItem('deadlines') === null){
+      localStorage.setItem('deadlines', JSON.stringify([]));
+    }
+    else{
+      let deadlineLocal = JSON.parse(localStorage.getItem('deadlines'));
+      setDeadlines(deadlineLocal);
+    }
+  }
+
   //save to local storage
   function saveLocalTodos(){
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -98,10 +116,12 @@ function App() {
 
   return (
     <div className="App">
-      <Menu menu={menu} setMenu={setMenu}/>
+      <DeadlineList deadlines={deadlines} setDeadlines={setDeadlines}/>
+      <Menu menu={menu} setMenu={setMenu} deadlines={deadlines} setDeadlines={setDeadlines}/>
       <header>
         <h1 className="day-of-the-week">{day}</h1>
       </header>
+     
       <Form
       setTodos={setTodos}
       todos={todos}
@@ -110,8 +130,11 @@ function App() {
       today={today}
       setDay={setDay}
       day={day}/>
+      
+
 
       <TodoList todos={todos} setTodos={setTodos} today={today} filteredTodos={filteredTodos} />
+      
     </div>
   );
 }

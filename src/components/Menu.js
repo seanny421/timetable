@@ -1,9 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import DeadlineEntry from "./DeadlineEntry";
 
-
-function Menu( {menu, setMenu} ) {
+function Menu( {menu, setMenu, deadlines, setDeadlines} ) {
+    const [subnav, setSubnav] = useState(false);
+    const [deadlineInput, setDeadlineInput] = useState("");
     function toggleMenu(){
         setMenu(!menu);
+        setSubnav(false);
+    }
+   
+    function toggleSubnav(){
+        setSubnav(!subnav);
     }
     return(
         <div className="menu-container">
@@ -14,7 +21,19 @@ function Menu( {menu, setMenu} ) {
             </div>
             <div id="flyoutMenu" className={`${menu ? "show" : ""}`}>
                 <h2><a href="./index.html" className="home">Home</a></h2>
-                <h2><a href="#">Reminder</a></h2>
+
+                <div className="subnav">
+                    <button onClick={toggleSubnav} className="subnavbtn"><h2>Deadlines <i className="fa fa-caret-right"></i></h2></button>
+                    <div id="subnav-content" className={`${subnav ? "subnav-content-show" : ""}`}>
+                        {/* <a href="#">Subnav</a> */}
+                        <DeadlineEntry 
+                        deadlines={deadlines}
+                        setDeadlines={setDeadlines}
+                        deadlineInput={deadlineInput}
+                        setDeadlineInput={setDeadlineInput}
+                        />
+                    </div>
+                </div>
                 <h2><a href="#">Look At</a></h2>
                 <h2><a href="./pom.html">Pomodoro</a></h2>
             </div>

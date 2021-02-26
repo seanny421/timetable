@@ -31,6 +31,7 @@ form button {
   background: white;
 }
 
+
 input:focus{
   outline:none;
 }
@@ -45,6 +46,64 @@ form button {
 form button:hover{
   background: #ff6e6e;
   color: white;
+}
+
+.deadline-container {
+  position: relative;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  
+}
+
+.deadline-list{
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 20%;
+  padding-right: 3%;
+  list-style: none;
+}
+
+/* .deadline-complete{
+  min-height: 6.5vh;
+} */
+
+.deadline{
+  margin:0.5rem;
+  color: black;
+  /* background-color: white; */
+  font-size: 1.5rem;
+  display: block;
+  padding-bottom: 13%;
+  /* justify-content: space-between; */
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+.deadline-date{
+  background-color: white;
+}
+
+.deadline-title {
+  background-color:#ff6e6e;
+  color: white;
+}
+
+.keep-right{
+  float: right;
+}
+
+
+.complete-btn-deadline{
+  background: rgb(92, 226, 92);
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .todo-container{
@@ -203,5 +262,68 @@ transform: rotate(45deg) translate(-8px, -8px) ;
 .menu-container {
   position: relative;
 }
+
+.subnavbtn {
+  font-size: inherit;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px;
+  background-color: inherit;
+  font-family: inherit;
+  /* margin: 0; */
+  
+}
+
+#subnav-content{
+  opacity: 0;
+  position: absolute;
+  text-decoration: none;
+  margin-left: 100%;
+  background-color: #ff6e6e;
+  /* min-width: 150%; */
+  transition:all 0.5s ease;
+  pointer-events: none;
+}
+
+#subnav-content.subnav-content-show{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.deadline-form {
+  padding-top: 0.5rem;
+  min-height: 10vh;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style-type: none;
+}
+.deadline-form li {
+  padding-bottom: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.deadline-date-input{
+  width: 34vh;
+}
+
+.deadline-input {
+  width: 28vh;
+}
+
+.slide{
+  transform: translateX(4rem);
+  opacity: 0;
+}
+
+/* .deadline-button{
+  max-height: 8vh;
+} */
+
+
 
 /* side nav end */
