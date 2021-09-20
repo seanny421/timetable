@@ -4,6 +4,7 @@ import axios from "axios";
 
 export default function OverdueList( {user, isMobile}){
     const [todoList, setTodoList] = useState([]);
+    const [haveOverdue, setHaveOverdue] = useState(false);
 
     useEffect(() => {
         const yesterday = new Date();
@@ -14,12 +15,16 @@ export default function OverdueList( {user, isMobile}){
             .then(response => {
                 setTodoList(response.data.reverse().filter(todo => todo.createdAt < yesterday.toISOString() && todo.todoCompleted === false));
             });
+        
     }, []);    
 
     return(
         <div>
             <section id="todolist">
-                Overdue
+                {todoList.length > 0 &&
+
+                    <h2>Overdue</h2>
+                }
                 {todoList.map(todo => (
                     
                     <Todo key={todo._id} todoId={todo._id} updatedAt={todo.updatedAt} createdAt={todo.createdAt} todoText={todo.todoText} isMobile={isMobile} todoCompleted={todo.todoCompleted}/>
