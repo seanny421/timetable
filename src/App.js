@@ -1,5 +1,5 @@
 import './App.css';
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import SearchBar from './components/SearchBar.jsx';
 import DayDisplay from './components/DayDisplay.jsx';
 import TodoList from "./components/TodoList/TodoList.jsx";
@@ -8,6 +8,7 @@ import Menu from "./components/Menu/Menu.jsx";
 import MenuButton from "./components/Menu/MenuButton.jsx";
 
 function App() {
+    //this is a test comment written on my mac
     const [isMobile, setMobile] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const [dateToday, setDateToday] = useState("");
