@@ -11,17 +11,17 @@ function App() {
     //this is a test comment written on my mac
     const [isMobile, setMobile] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
-    const [dateToday, setDateToday] = useState("");
+    const [dateToShow, setDateToShow] = useState("");
     useEffect(() => {
         setMobile(window.innerWidth < 1000);
-        setDateToday(new Date().getDate());
+        setDateToShow(new Date().getDate());
     }, []);
 
   return (
 
     <div className="App h-screen font-sans">
         <MenuButton showMenu={showMenu} setShowMenu={setShowMenu}/>
-        <Menu showMenu={showMenu} dateToday={dateToday}/>
+        <Menu showMenu={showMenu} dateToShow={dateToShow}/>
         <div className="p-6">
         <DayDisplay />
         <SearchBar />

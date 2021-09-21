@@ -23,7 +23,7 @@ export default function OverdueList( {user, isMobile}){
             <section id="todolist">
                 {todoList.length > 0 &&
 
-                    <h2>Overdue</h2>
+                    <h2 className="text-4xl md:text-6xl">Overdue</h2>
                 }
                 {todoList.map(todo => (
                     

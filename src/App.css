@@ -31,6 +31,23 @@ body{
   height: 40vmin;
   pointer-events: none;
 }
+/* .my-node-enter { */
+/*   opacity: 0; */
+/*   transform: translateY(1000px); */
+/* } */
+/* .my-node-enter-active { */
+/*   opacity: 1; */
+/*   transform: translateY(100%); */
+/*   transition: all ease-in-out 500ms; */
+/* } */
+/* .my-node-exit { */
+/*   opacity: 1; */
+/* } */
+/* .my-node-exit-active { */
+/*   opacity: 0; */
+/*   transform: translateY(-1000px); */
+/*   transition: all ease-in-out 500ms; */
+/* } */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

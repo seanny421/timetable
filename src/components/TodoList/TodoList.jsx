@@ -19,7 +19,7 @@ export default function TodoList( {user, isMobile}){
     return(
         <div>
             <section id="todolist">
-                Not Overdue
+                <h2 className="text-4xl md:text-6xl">Today</h2>
                 {todoList.map(todo => (
                     
                     <Todo key={todo._id} todoId={todo._id} updatedAt={todo.updatedAt} createdAt={todo.createdAt} todoText={todo.todoText} isMobile={isMobile} todoCompleted={todo.todoCompleted}/>

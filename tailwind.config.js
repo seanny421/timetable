@@ -12,19 +12,6 @@ module.exports = {
         '60': '60%',
     },
     extend: {
-        typography: {
-            '3xl': {
-                css: {
-                    fontSize: '1.875rem',
-                    h1: {
-                        fontSize: '3rem'
-                    },
-                },
-            },
-
-            
-        },
-
         keyframes: {
             press: {
                 "0%, 100%": {transform: "scale(1)"},
@@ -66,7 +53,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 }
